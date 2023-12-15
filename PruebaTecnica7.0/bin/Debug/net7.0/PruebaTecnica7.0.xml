@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PruebaTecnica7.0</name>
+    </assembly>
+    <members>
+        <member name="M:PruebaTecnica.Controllers.ProveedorController.GetAll">
+            <summary>
+            Este endpoint obtiene y retorna todos los proveedores de la base de datos.
+            </summary>
+            <respone code="200">Retorna una lista de todos los proveedores en el sistema</respone>
+        </member>
+        <member name="M:PruebaTecnica.Controllers.ProveedorController.Get(System.String)">
+            <summary>
+            Este endpoint obtiene y retorna un proveedor especifico de la base de datos.
+            </summary>
+            <respone code="200">Retorna un proveedor especifico buscando por el id</respone>
+        </member>
+        <member name="M:PruebaTecnica.Controllers.ProveedorController.Post(PruebaTecnica.Dtos.ProveedorDTO)">
+            <summary>
+            Crea un proveedor nuevo en el sistema.
+            </summary>
+            <respone code="200">Crea un proveedor nuevo en el sistema</respone>
+        </member>
+        <member name="M:PruebaTecnica.Controllers.ProveedorController.Put(System.String,PruebaTecnica.Models.Proveedor)">
+            <summary>
+            Actualiza la información de un proveedor en el sistema.
+            </summary>
+            <respone code="200">Actualiza la información(algunos campos) de un proveedor en especifico</respone>
+        </member>
+        <member name="M:PruebaTecnica.Controllers.ProveedorController.Delete(System.String)">
+            <summary>
+            Elimina un proveedor del sistema.
+            </summary>
+            <respone code="200">Elimina un proveedor del sistema</respone>
+        </member>
+    </members>
+</doc>
