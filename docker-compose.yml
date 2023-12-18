@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  pruebatecnica7.0:
+    image: ${DOCKER_REGISTRY-}pruebatecnica70
+    build:
+      context: .
+      dockerfile: PruebaTecnica7.0/Dockerfile
+    ports:
+      - "8000:80"
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword

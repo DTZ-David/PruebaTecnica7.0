@@ -10,7 +10,7 @@
             </summary>
             <respone code="200">Retorna una lista de todos los proveedores en el sistema</respone>
         </member>
-        <member name="M:PruebaTecnica.Controllers.ProveedorController.Get(System.String)">
+        <member name="M:PruebaTecnica.Controllers.ProveedorController.Get(System.Int32)">
             <summary>
             Este endpoint obtiene y retorna un proveedor especifico de la base de datos.
             </summary>
@@ -22,13 +22,13 @@
             </summary>
             <respone code="200">Crea un proveedor nuevo en el sistema</respone>
         </member>
-        <member name="M:PruebaTecnica.Controllers.ProveedorController.Put(System.String,PruebaTecnica.Models.Proveedor)">
+        <member name="M:PruebaTecnica.Controllers.ProveedorController.Put(System.Int32,PruebaTecnica.Models.Proveedor)">
             <summary>
             Actualiza la información de un proveedor en el sistema.
             </summary>
             <respone code="200">Actualiza la información(algunos campos) de un proveedor en especifico</respone>
         </member>
-        <member name="M:PruebaTecnica.Controllers.ProveedorController.Delete(System.String)">
+        <member name="M:PruebaTecnica.Controllers.ProveedorController.Delete(System.Int32)">
             <summary>
             Elimina un proveedor del sistema.
             </summary>

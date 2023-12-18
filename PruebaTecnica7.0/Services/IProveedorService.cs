@@ -1,13 +1,14 @@
-﻿using PruebaTecnica.Models;
+﻿using PruebaTecnica.Dtos;
+using PruebaTecnica.Models;
 
 namespace PruebaTecnica.Services
 {
     public interface IProveedorService
     {
-        IEnumerable<Proveedor> GetAll();
-        Proveedor Get(string id);
+        IEnumerable<ProveedorDTO> GetAll();
+        Proveedor Get(int Nit);
         Proveedor Create(Proveedor proveedores);
         void Update(Proveedor proveedores);
-        void Remove (int id);
+        void Remove (int nit);
     }
 }

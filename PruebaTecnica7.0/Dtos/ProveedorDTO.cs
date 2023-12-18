@@ -4,6 +4,9 @@ namespace PruebaTecnica.Dtos
 {
     public class ProveedorDTO
     {
+        [BsonElement("id")]
+        public string Id { get; set; }
+
         [BsonElement("NIT")]
         public int NIT { get; set; }
 

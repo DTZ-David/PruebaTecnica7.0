@@ -1,6 +1,8 @@
 ﻿using PruebaTecnica.Models;
 using MongoDB.Driver;
 using PruebaTecnica.Repositorio;
+using Microsoft.AspNetCore.Mvc;
+using PruebaTecnica.Dtos;
 
 namespace PruebaTecnica.Services
 {
@@ -22,17 +24,21 @@ namespace PruebaTecnica.Services
             return proveedores;
         }
 
-        public IEnumerable<Proveedor> GetAll()
+        public IEnumerable<ProveedorDTO> GetAll()
         {
-            return _proveedores.Find(proveedores => true).ToList();
+            var coleccion = _proveedores.Find(proveedores => true).ToList();
+            var resultado = coleccion.Select(proveedor => proveedor.ConvertirDTO());
 
+            return resultado;
         }
 
 
-        public Proveedor Get(string Id)
+        public Proveedor Get(int Nit)
         {
-            return _proveedores.Find(proveedores => proveedores.Id == Id).FirstOrDefault();
+            var proveedor = _proveedores.Find(proveedores => proveedores.NIT == Nit).FirstOrDefault();
+            return proveedor;
         }
+
 
         public void Remove(int Nit)
         {

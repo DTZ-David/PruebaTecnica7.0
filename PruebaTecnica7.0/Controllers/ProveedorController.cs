@@ -11,7 +11,7 @@ namespace PruebaTecnica.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class ProveedorController : ControllerBase
     {
         private readonly IProveedorService proveedorService;
@@ -37,9 +37,9 @@ namespace PruebaTecnica.Controllers
         /// <respone code="200">Retorna un proveedor especifico buscando por el id</respone>
         // GET api/<ProveedoresController>/5
         [HttpGet("{id}")]
-        public IActionResult Get(string id)
+        public IActionResult Get(int Nit)
         {
-            var proveedor = (proveedorService.Get(id)).ConvertirDTO();
+            var proveedor = (proveedorService.Get(Nit)).ConvertirDTO();
             if(proveedor == null)
             {
                 return NotFound("Proveedor no encontrado");
@@ -53,10 +53,18 @@ namespace PruebaTecnica.Controllers
         /// <respone code="200">Crea un proveedor nuevo en el sistema</respone>
         // POST api/<ProveedoresController>
         [HttpPost]
-        public IActionResult Post([FromBody] ProveedorDTO proveedor)
+        public ActionResult Post([FromBody] ProveedorDTO proveedor)
         {
             if (proveedor == null)
                 return BadRequest();
+
+            // Verificar si el NIT ya existe en la base de datos
+            var existingProveedor = proveedorService.Get(proveedor.NIT);
+
+            if (existingProveedor != null)
+            {
+                return Conflict("El proveedor con este NIT ya existe"); // O podrías retornar otro código de estado adecuado
+            }
 
             Proveedor p = new Proveedor
             {
@@ -64,14 +72,17 @@ namespace PruebaTecnica.Controllers
                 RazonSocial = proveedor.RazonSocial,
                 Direccion = proveedor.Direccion,
                 Ciudad = proveedor.Ciudad,
+                Departamento = "No aplica",
                 Correo = proveedor.Correo,
                 FechaCreacion = DateTime.Now,
                 NombreContacto = proveedor.NombreContacto,
                 CorreoContacto = proveedor.CorreoContacto
             };
+
             proveedorService.Create(p);
-            return CreatedAtAction(nameof(Get) , new {Nit = proveedor.NIT}, proveedor);
+            return Ok("Recurso creado exitosamente");
         }
+
 
         /// <summary>
         /// Actualiza la información de un proveedor en el sistema.
@@ -79,13 +90,13 @@ namespace PruebaTecnica.Controllers
         /// <respone code="200">Actualiza la información(algunos campos) de un proveedor en especifico</respone>
         // PUT api/<ProveedoresController>/5
         [HttpPut("{id}")]
-        public ActionResult Put(string id, [FromBody] Proveedor proveedor)
+        public ActionResult Put(int Nit, [FromBody] Proveedor proveedor)
         {
-            var existingProveedor = proveedorService.Get(id);
+            var existingProveedor = proveedorService.Get(Nit);
 
             if (existingProveedor == null)
             {
-                return NotFound($"El proveedor con el id = {id} no fue encontrado");
+                return NotFound($"El proveedor con el NIT = {Nit} no fue encontrado");
             }
 
             proveedorService.Update(proveedor);
@@ -97,14 +108,13 @@ namespace PruebaTecnica.Controllers
         /// </summary>
         /// <respone code="200">Elimina un proveedor del sistema</respone>
         // DELETE api/<ProveedoresController>/5
-        [HttpDelete("{NIT}")]
-        public IActionResult Delete(string Nit)
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int Nit)
         {
-            var proveedor = proveedorService.Get(Nit);
-
+            var proveedor = (proveedorService.Get(Nit)).ConvertirDTO();
             if (proveedor == null)
             {
-                return NotFound($"El proveedor con el NIT = {Nit} no fue encontrado");
+                return NotFound("Proveedor no encontrado");
             }
 
             proveedorService.Remove(proveedor.NIT);

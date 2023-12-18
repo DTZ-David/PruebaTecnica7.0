@@ -13,6 +13,7 @@ namespace PruebaTecnica
             {
                 return new ProveedorDTO
                 {
+                    Id = proveedorDTO.Id,
                     NIT = proveedorDTO.NIT,
                     RazonSocial = proveedorDTO.RazonSocial,
                     Direccion = proveedorDTO.Direccion,
