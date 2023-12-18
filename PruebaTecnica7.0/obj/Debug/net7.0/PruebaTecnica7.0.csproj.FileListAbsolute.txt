@@ -59,3 +59,4 @@ C:\Users\dtzda\source\repos\PruebaTecnica7.0\PruebaTecnica7.0\obj\Debug\net7.0\P
 C:\Users\dtzda\source\repos\PruebaTecnica7.0\PruebaTecnica7.0\obj\Debug\net7.0\ref\PruebaTecnica7.0.dll
 C:\Users\dtzda\source\repos\PruebaTecnica7.0\PruebaTecnica7.0\bin\Debug\net7.0\PruebaTecnica7.0.xml
 C:\Users\dtzda\source\repos\PruebaTecnica7.0\PruebaTecnica7.0\obj\Debug\net7.0\PruebaTecnica7.0.xml
+C:\Users\dtzda\source\repos\PruebaTecnica7.0\PruebaTecnica7.0\obj\Debug\net7.0\PruebaTecnica7.0.sourcelink.json
