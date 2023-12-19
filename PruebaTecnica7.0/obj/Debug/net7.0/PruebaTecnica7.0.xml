@@ -4,6 +4,12 @@
         <name>PruebaTecnica7.0</name>
     </assembly>
     <members>
+        <member name="M:PruebaTecnica.Controllers.LoginApiController.Login(PruebaTecnica.Dtos.LoginApiDTO)">
+            <summary>
+            Valida el usuario y genera el token para la autenticación
+            </summary>
+            <respone code="200">Valida el usuario y genera el token para la autenticación</respone>
+        </member>
         <member name="M:PruebaTecnica.Controllers.ProveedorController.GetAll">
             <summary>
             Este endpoint obtiene y retorna todos los proveedores de la base de datos.

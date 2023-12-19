@@ -136,3 +136,4 @@ C:\Users\dtzda\source\repos\PruebaTecnica7.0\PruebaTecnicaTest\obj\Debug\net7.0\
 C:\Users\dtzda\source\repos\PruebaTecnica7.0\PruebaTecnicaTest\obj\Debug\net7.0\PruebaTecnicaTest.pdb
 C:\Users\dtzda\source\repos\PruebaTecnica7.0\PruebaTecnicaTest\obj\Debug\net7.0\PruebaTecnicaTest.genruntimeconfig.cache
 C:\Users\dtzda\source\repos\PruebaTecnica7.0\PruebaTecnicaTest\obj\Debug\net7.0\ref\PruebaTecnicaTest.dll
+C:\Users\dtzda\source\repos\PruebaTecnica7.0\PruebaTecnicaTest\obj\Debug\net7.0\PruebaTecnicaTest.sourcelink.json

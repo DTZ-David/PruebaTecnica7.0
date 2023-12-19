@@ -442,3 +442,4 @@ C:\Users\dtzda\source\repos\PruebaTecnica7.0\PruebaTecnicaIntegrationTest\obj\De
 C:\Users\dtzda\source\repos\PruebaTecnica7.0\PruebaTecnicaIntegrationTest\obj\Debug\net7.0\PruebaTecnicaIntegrationTest.pdb
 C:\Users\dtzda\source\repos\PruebaTecnica7.0\PruebaTecnicaIntegrationTest\obj\Debug\net7.0\PruebaTecnicaIntegrationTest.genruntimeconfig.cache
 C:\Users\dtzda\source\repos\PruebaTecnica7.0\PruebaTecnicaIntegrationTest\obj\Debug\net7.0\ref\PruebaTecnicaIntegrationTest.dll
+C:\Users\dtzda\source\repos\PruebaTecnica7.0\PruebaTecnicaIntegrationTest\obj\Debug\net7.0\PruebaTecnicaIntegrationTest.sourcelink.json

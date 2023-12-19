@@ -30,7 +30,7 @@ namespace PruebaTecnicaTest
         public void GetById_UnknownGuidPassed_ReturnsNotFoundResult()
         {
             // Act
-            var notFoundResult = _controller.Get("3");
+            var notFoundResult = _controller.Get(3);
             // Assert
             Assert.IsType<NotFoundObjectResult>(notFoundResult);
         }
@@ -39,7 +39,7 @@ namespace PruebaTecnicaTest
         public void GetById_ExistingGuidPassed_ReturnsOkResult()
         {
             // Arrange
-            var testGuid = ("1");
+            var testGuid = (987643210);
             // Act
             var okResult = _controller.Get(testGuid);
             // Assert

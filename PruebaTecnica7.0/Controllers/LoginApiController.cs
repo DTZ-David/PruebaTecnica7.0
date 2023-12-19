@@ -24,6 +24,11 @@ namespace PruebaTecnica.Controllers
             this.configuration = configuration;
         }
 
+
+        /// <summary>
+        /// Valida el usuario y genera el token para la autenticación
+        /// </summary>
+        /// <respone code="200">Valida el usuario y genera el token para la autenticación</respone>
         [HttpPost]
         [AllowAnonymous]
         public ActionResult<UsuarioApiDTO> Login(LoginApiDTO loginApiDTO)

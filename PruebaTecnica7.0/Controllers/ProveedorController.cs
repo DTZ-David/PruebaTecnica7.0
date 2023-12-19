@@ -11,7 +11,7 @@ namespace PruebaTecnica.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class ProveedorController : ControllerBase
     {
         private readonly IProveedorService proveedorService;
